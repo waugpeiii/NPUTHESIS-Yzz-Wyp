@@ -49,7 +49,7 @@
 
 \ifx\ctexset\undefined
   \CTEXsetup[ % name={,}, number={\arabic{chapter}},% use default value
-    beforeskip={20pt}, afterskip={20pt}]{chapter}
+    beforeskip={0pt}, afterskip={20pt}]{chapter}
   \CTEXsetup[nameformat={\heiti\zihao{3}\bf}]{chapter}
   \CTEXsetup[titleformat={\heiti\zihao{3}}]{chapter}
   \CTEXsetup[format={\heiti\zihao{4}}]{section}

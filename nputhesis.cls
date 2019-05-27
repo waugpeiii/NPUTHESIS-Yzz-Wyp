@@ -48,8 +48,8 @@
 \headsep=5mm
 
 \ifx\ctexset\undefined
-  \CTEXsetup[ % name={,}, number={\arabic{chapter}},% use default value
-    beforeskip={0pt}, afterskip={20pt}]{chapter}
+  \CTEXsetup[%name={,}, number={\arabic{chapter}},% use default value
+    beforeskip={20pt}, afterskip={20pt}]{chapter}
   \CTEXsetup[nameformat={\heiti\zihao{3}\bf}]{chapter}
   \CTEXsetup[titleformat={\heiti\zihao{3}}]{chapter}
   \CTEXsetup[format={\heiti\zihao{4}}]{section}
@@ -60,12 +60,13 @@
   }
   % title format of chapter
   \ctexset{
-    % chapter/name={,},                % use default value in ctex
-    % chapter/number=\arabic{chapter}, % use default value in ctex
-    chapter/beforeskip={20bp},
+  %  chapter/name={,},                %%%这行和下行使用的话会改变章节“第一章 XXX”改为“1 XXX”
+  %  chapter/number=\arabic{chapter}, %%%但是有个问题，学校的模板貌似是黑体“1”但是目录是宋体“1”emmm，诡异，学校模板忘改了吧
+    chapter/beforeskip={-10bp},%%%%%修改过，原来是20-20，改为-10-20刚好上下一致，居然可以用负值。。。神奇。
     chapter/afterskip={20bp},
     chapter/format={\heiti\zihao{3}\centering}
   }
+  %\renewcommand\thesection{\arabic{chapter}}
   % title format of section
   \ctexset{
     section/name={,},
@@ -102,10 +103,10 @@
 %   \fi#1}{}}
 \fancyhf{}
 \fancyhead[EC]{\songti\zihao{-5}\npu@rightmark}
-\fancyhead[OC]{\songti\zihao{-5}\leftmark}
+\fancyhead[OC]{\songti\zihao{-5}\nouppercase\leftmark} %加入了“\nouppercase”以调整章标题中英文大小写，不然，默认都大写。
 \fancyfoot[C]{\songti\zihao{5}\thepage}
 \renewcommand{\headrule}{%
-  \hrule width\headwidth height2.8pt \vspace{1pt}%
+  \hrule width\headwidth height2.8pt \vspace{0.8pt}%空格改成0.8pt较好
   \hrule width\headwidth height0.8pt}
 \fancypagestyle{plain}{\thispagestyle{fancy}}
 \newcommand{\clearpagestyle}{\clearpage{\pagestyle{empty}\cleardoublepage}}

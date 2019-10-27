@@ -27,7 +27,7 @@
 \RequirePackage{ulem}
 \RequirePackage{amsthm}
 \RequirePackage{amsmath}
-\RequirePackage{amsfonts}
+\RequirePackage{fourier}%{amsfonts}
 \RequirePackage{setspace}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
@@ -39,6 +39,7 @@
 \ifxetex
   \setmainfont{Times New Roman}
 \fi
+
 
 \geometry{paperwidth=210mm,paperheight=297mm,%
   left=2.5cm,right=2.5cm,top=2.54cm,bottom=2.54cm}
@@ -145,6 +146,9 @@
 % set normal font size
 \renewcommand{\normalsize}{\zihao{-4}}
 \linespread{1.5}
+
+
+
 
 % cover
 \def\makeoutercover{

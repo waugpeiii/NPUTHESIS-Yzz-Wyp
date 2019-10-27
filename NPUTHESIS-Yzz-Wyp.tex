@@ -59,17 +59,19 @@
 可以删掉的文件见下表所示：
 % 表格示例 三线表
 \begin{table}[htbp]
-  \caption{可以删掉的文件}
-  \centering
-  \begin{tabular}{lccccccccc}
-    \toprule
+    \setlength{\abovecaptionskip}{10pt}
+    \setlength{\belowcaptionskip}{5pt}
+    \small
+    \centering
+     \caption{可以删掉的文件}
+  \begin{tabular*}{\hsize}{@{}@{\extracolsep{\fill}}lccccccccc@{}}
+    \toprule[2pt]
      可删文件 & .& .& .& .& .& .& .& .& . \\
-    \midrule
+    \midrule[1pt]
     扩展名 &bbl&gz&xml&blg&pdf&out&log&aux&bcf\\
-    \bottomrule
-  \end{tabular}
+    \bottomrule[2pt]
+  \end{tabular*}
 \end{table}
-
 \chapter{本模板使用方法}
 编译方法及运行。。。
 \section{成功方案}
@@ -83,6 +85,13 @@
 保险起见，再来一次Xelatex。
 之后如果修改了结构，需要连续两次Xelatex，毕竟要生成目录索引的。
 
+\section{公式示例}
+\begin{equation}
+    \setlength{\abovedisplayskip}{5pt}
+    \setlength{\belowdisplayskip}{5pt}
+    \mathrm{Zr}+2 \mathrm{H}_{2} \mathrm{O} \rightarrow \mathrm{ZrO}_{2}+2 \mathrm{H}_{2} \uparrow \quad \Delta H=-586 \mathrm{kJ} / \mathrm{mol}
+    \label{eagehejin}
+\end{equation}
 
 \chapter{参考文献事宜及模板缺陷}
 建议使用谷歌学术，搜索之后点cite，点bicite，然后出来个网页，全选，复制，粘贴到.bib文件中，如\par
